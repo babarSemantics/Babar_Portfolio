@@ -6,7 +6,6 @@
     <title>Muhammad Babar Ali - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-
 </head>
 <body>
     <!-- Header Section -->
@@ -369,28 +368,30 @@
     <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
-        <p>Bachelor of Science: Computer Science And Programming <strong>CGPA 3.71/4.00</strong></p>
-        <p><strong>University of Engineering And Technology Lahore</strong> - Lahore, Pakistan | 2012-08 - 2016-08</p>
+        <div class="education-item">
+            <h3>Bachelor of Science: Computer Science And Programming</h3>
+            <p><strong>CGPA 3.71/4.00</strong></p>
+            <p><strong>University of Engineering And Technology Lahore</strong> - Lahore, Pakistan | 2012-08 - 2016-08</p>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <ul>
-            <li>Address: Riyadh city KSA</li>
-            <li>Phone: +966552184581</li>
-            <li>Email: babarsementic@gmail.com</li>
-            <li><a href="https://www.linkedin.com/in/muhammadbabarali/" target="_blank">LinkedIn</a></li>
-        </ul>
+        <p><strong>Address:</strong> Riyadh city KSA</p>
+        <p><strong>Phone:</strong> +966552184581</p>
+        <p><strong>Email:</strong> <a href="mailto:babarsementic@gmail.com">babarsementic@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammadbabarali/" target="_blank">Muhammad Babar Ali</a></p>
     </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const sections = document.querySelectorAll("section");
+
+            // Add fade-in-animation class to sections for scroll animation
+            sections.forEach(section => {
+                section.classList.add("fade-in-animation");
+            });
 
             const observerOptions = {
                 root: null,
