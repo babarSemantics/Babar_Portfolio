@@ -387,3 +387,50 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Profile photo update logic
+            const profilePhoto = document.getElementById("profile-photo");
+            const fileInput = document.getElementById("file-input");
+
+            profilePhoto.addEventListener("click", () => {
+                fileInput.click();
+            });
+
+            window.updateProfilePhoto = function() {
+                const file = fileInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profilePhoto.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
