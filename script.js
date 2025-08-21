@@ -1,5 +1,3 @@
-// script.js
-
 // Update Profile Photo based on user selection
 function updateProfilePhoto() {
     const fileInput = document.getElementById("file-input");
